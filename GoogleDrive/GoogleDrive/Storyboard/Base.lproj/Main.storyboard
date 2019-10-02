@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="78H-ML-x08">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="GoogleDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFs-Kf-n0I" customClass="GIDSignInButton">
+                                <rect key="frame" x="137.5" y="308.5" width="100" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EtJ-Va-9kn"/>
+                                    <constraint firstAttribute="height" constant="50" id="udu-YI-aT2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GFs-Kf-n0I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EcP-9G-J82"/>
+                            <constraint firstItem="GFs-Kf-n0I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YJc-cK-gc6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Wg-Ax-kH5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="-48"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="adR-lD-jUp">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="ePJ-2T-s47" customClass="ListViewController" customModule="GoogleDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eza-0W-KGs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3hN-H6-Vpw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-LI-16r">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0tv-lf-501" firstAttribute="bottom" secondItem="3hN-H6-Vpw" secondAttribute="bottom" id="C8F-YB-Qh9"/>
+                            <constraint firstItem="Fen-LI-16r" firstAttribute="centerX" secondItem="eza-0W-KGs" secondAttribute="centerX" id="MT9-8q-K4D"/>
+                            <constraint firstItem="3hN-H6-Vpw" firstAttribute="leading" secondItem="0tv-lf-501" secondAttribute="leading" id="Nqu-HD-ZPc"/>
+                            <constraint firstItem="0tv-lf-501" firstAttribute="trailing" secondItem="3hN-H6-Vpw" secondAttribute="trailing" id="OZj-Rm-yKV"/>
+                            <constraint firstItem="3hN-H6-Vpw" firstAttribute="top" secondItem="0tv-lf-501" secondAttribute="top" id="iMx-Tf-0xW"/>
+                            <constraint firstItem="Fen-LI-16r" firstAttribute="centerY" secondItem="eza-0W-KGs" secondAttribute="centerY" id="ndZ-kQ-Ve4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0tv-lf-501"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sx9-EP-dhu"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="Fen-LI-16r" id="BaJ-Gx-d7p"/>
+                        <outlet property="tblFilesList" destination="3hN-H6-Vpw" id="a7O-Qz-NJg"/>
+                        <segue destination="Jmz-qa-y8I" kind="show" identifier="listToDetails" id="fBE-kf-X6k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lts-jX-A55" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823" y="-48"/>
+        </scene>
+        <!--File Detail View Controller-->
+        <scene sceneID="enq-Rz-wm7">
+            <objects>
+                <viewController storyboardIdentifier="FileDetailViewController" id="Jmz-qa-y8I" customClass="FileDetailViewController" customModule="GoogleDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4oo-SI-PKk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ueY-TX-m96">
+                                <rect key="frame" x="177.5" y="89" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="VaZ-XL-Mb0"/>
+                                    <constraint firstAttribute="height" constant="20" id="cLF-jA-hSS"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ar1-f4-1Ut">
+                                <rect key="frame" x="10" y="129" width="355" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-MM-4sk">
+                                <rect key="frame" x="170.5" y="189" width="34" height="30"/>
+                                <state key="normal" title="View"/>
+                                <connections>
+                                    <action selector="btnViewDidCicked:" destination="Jmz-qa-y8I" eventType="touchUpInside" id="tUv-ZZ-ghj"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-RL-s7p">
+                                <rect key="frame" x="32" y="303" width="311" height="2"/>
+                            </progressView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OcM-ib-esJ">
+                                <rect key="frame" x="167.5" y="577" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7TE-b0-Uwr"/>
+                                    <constraint firstAttribute="width" constant="40" id="Mt4-rh-gdF"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nV5-MM-4sk" firstAttribute="top" secondItem="Ar1-f4-1Ut" secondAttribute="bottom" constant="60" id="FAv-cx-trY"/>
+                            <constraint firstItem="T1a-lm-m7y" firstAttribute="bottom" secondItem="OcM-ib-esJ" secondAttribute="bottom" constant="50" id="FQ0-th-ft1"/>
+                            <constraint firstItem="Ar1-f4-1Ut" firstAttribute="top" secondItem="ueY-TX-m96" secondAttribute="bottom" constant="20" id="Iz4-xo-HIU"/>
+                            <constraint firstItem="nV5-MM-4sk" firstAttribute="centerX" secondItem="4oo-SI-PKk" secondAttribute="centerX" id="N6y-H7-bMn"/>
+                            <constraint firstItem="T1a-lm-m7y" firstAttribute="trailing" secondItem="Ar1-f4-1Ut" secondAttribute="trailing" constant="10" id="SKQ-PO-pfQ"/>
+                            <constraint firstItem="sUI-RL-s7p" firstAttribute="leading" secondItem="4oo-SI-PKk" secondAttribute="leading" constant="32" id="YEB-qs-CFm"/>
+                            <constraint firstItem="Ar1-f4-1Ut" firstAttribute="leading" secondItem="T1a-lm-m7y" secondAttribute="leading" constant="10" id="e5O-r0-GTr"/>
+                            <constraint firstAttribute="trailing" secondItem="sUI-RL-s7p" secondAttribute="trailing" constant="32" id="mE4-1F-hz0"/>
+                            <constraint firstItem="OcM-ib-esJ" firstAttribute="centerX" secondItem="4oo-SI-PKk" secondAttribute="centerX" id="ntN-lX-5aB"/>
+                            <constraint firstItem="ueY-TX-m96" firstAttribute="top" secondItem="T1a-lm-m7y" secondAttribute="top" constant="25" id="quo-qU-a0o"/>
+                            <constraint firstItem="sUI-RL-s7p" firstAttribute="top" secondItem="nV5-MM-4sk" secondAttribute="bottom" constant="84" id="ugd-au-PxB"/>
+                            <constraint firstItem="ueY-TX-m96" firstAttribute="centerX" secondItem="4oo-SI-PKk" secondAttribute="centerX" id="xGc-kv-DXE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T1a-lm-m7y"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="OcM-ib-esJ" id="lER-cZ-RN7"/>
+                        <outlet property="btnView" destination="nV5-MM-4sk" id="Zhz-Eh-WDD"/>
+                        <outlet property="imgViewLink" destination="ueY-TX-m96" id="Apn-k5-daP"/>
+                        <outlet property="lblFileName" destination="Ar1-f4-1Ut" id="lcL-zj-pT1"/>
+                        <outlet property="progressView" destination="sUI-RL-s7p" id="US8-dT-x14"/>
+                        <segue destination="LCK-I3-HO2" kind="show" identifier="detailsToWebView" id="mvm-Eq-WyA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jye-gd-upH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3661.5999999999999" y="-48.125937031484263"/>
+        </scene>
+        <!--In App Web View View Controller-->
+        <scene sceneID="TkH-KL-lw1">
+            <objects>
+                <viewController storyboardIdentifier="InAppWebViewViewController.swift" id="LCK-I3-HO2" customClass="InAppWebViewViewController" customModule="GoogleDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTa-be-SWR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nv-xv-A7S">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5Nv-xv-A7S" firstAttribute="leading" secondItem="qb7-su-oke" secondAttribute="leading" id="NXx-em-2Fe"/>
+                            <constraint firstItem="qb7-su-oke" firstAttribute="bottom" secondItem="5Nv-xv-A7S" secondAttribute="bottom" id="QHq-Uk-tzO"/>
+                            <constraint firstItem="5Nv-xv-A7S" firstAttribute="top" secondItem="qb7-su-oke" secondAttribute="top" id="XHg-GP-ZwU"/>
+                            <constraint firstItem="qb7-su-oke" firstAttribute="trailing" secondItem="5Nv-xv-A7S" secondAttribute="trailing" id="z0K-hU-BJ1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qb7-su-oke"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="5Nv-xv-A7S" id="KHV-1A-Fjs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKT-Je-tBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4590" y="-48"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m6e-gO-gUp">
+            <objects>
+                <navigationController storyboardIdentifier="ListViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="f9t-9U-EHJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g5r-F4-DdQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ePJ-2T-s47" kind="relationship" relationship="rootViewController" id="Rgx-bN-ce5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAy-Xg-e8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="-48.125937031484263"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="cvC-qw-hS8">
+            <objects>
+                <viewController id="78H-ML-x08" customClass="SplashViewController" customModule="GoogleDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i59-jD-Jkh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G Drive Demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-il-1r5">
+                                <rect key="frame" x="114.5" y="320" width="146.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g2F-il-1r5" firstAttribute="centerX" secondItem="i59-jD-Jkh" secondAttribute="centerX" id="JYd-Ma-EkD"/>
+                            <constraint firstItem="g2F-il-1r5" firstAttribute="centerY" secondItem="i59-jD-Jkh" secondAttribute="centerY" id="MfQ-6S-fVJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hSl-he-dOe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8c-D7-lL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-710" y="-48"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9X6-xR-fJH">
+            <objects>
+                <navigationController storyboardIdentifier="LoginViewControllerNavigation" automaticallyAdjustsScrollViewInsets="NO" id="MZs-O5-U0M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dBT-cy-vdj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kwV-cc-ji4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dUP-px-8ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="-48.125937031484263"/>
+        </scene>
+    </scenes>
+</document>

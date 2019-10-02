@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  GoogleDrive
+//
+//  Created by Ankit on 21/04/19.
+//  Copyright © 2019 Ankit. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GOOGLE_CLIENT_ID = 629797819697-r57ejvhvbktv8chjlb2sft63l5evsk5h.apps.googleusercontent.com
